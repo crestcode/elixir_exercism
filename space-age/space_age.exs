@@ -12,7 +12,7 @@ defmodule SpaceAge do
   """
   @spec age_on(planet, pos_integer) :: float
   def age_on(planet, seconds) do
-    case planet in Map.keys(@year_length) && seconds >= 0 do
+    case planet in Map.keys(@year_length) && seconds > 0 do
       :true ->
         seconds / @seconds_per_year / @year_length[planet]
       :false ->
